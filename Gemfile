@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'roo'
+
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'

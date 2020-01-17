@@ -1,0 +1,14 @@
+<ul class="list-unstyled">
+  <% notes.each do |note| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div class="panel panel-default">
+        <div class="panel-heading"><%= note.id %></div>
+        <div class="panel-body">
+            <%= note.description %> 
+        </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
