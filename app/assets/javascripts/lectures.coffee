@@ -12,7 +12,7 @@ $(document).on 'change', '#lecture_faculty', ->
     console.info(data)
     $('.get_departments').html(data)
 
-$('.get_departments').on 'change','#lecture_departments' ->
+$('.get_departments').on 'change','#lecture_departments', ->
   $.ajax(
     type: 'GET'
     url: '/lectures/get_educators'
