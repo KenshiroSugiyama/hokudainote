@@ -1,0 +1,2 @@
+<%= label :学部, :department_id %><br>
+<%= collection_select :@lecture, :department, Department.where(faculty_id: faculty_id), :id, :name %>

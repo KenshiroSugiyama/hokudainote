@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_031239) do
+ActiveRecord::Schema.define(version: 2020_01_17_084637) do
 
   create_table "departments", force: :cascade do |t|
     t.integer "faculty_id"
@@ -19,15 +19,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_031239) do
     t.datetime "updated_at", null: false
     t.index ["faculty_id"], name: "index_departments_on_faculty_id"
     t.index ["name"], name: "index_departments_on_name"
-  end
-
-  create_table "educator_departments", force: :cascade do |t|
-    t.integer "educator_id"
-    t.integer "department_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["department_id"], name: "index_educator_departments_on_department_id"
-    t.index ["educator_id"], name: "index_educator_departments_on_educator_id"
   end
 
   create_table "educator_positions", force: :cascade do |t|
@@ -45,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_01_17_031239) do
     t.datetime "updated_at", null: false
     t.index ["educator_position_id"], name: "index_educators_on_educator_position_id"
     t.index ["last_name"], name: "index_educators_on_last_name"
+  end
+
+  create_table "educators_departments", force: :cascade do |t|
+    t.integer "educator_id"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_educators_departments_on_department_id"
+    t.index ["educator_id"], name: "index_educators_departments_on_educator_id"
   end
 
   create_table "faculties", force: :cascade do |t|
