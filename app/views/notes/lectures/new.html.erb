@@ -1,7 +1,8 @@
 <div class="row">
 <div class="col-sm-4">
-    <%= form_with(model: @lecture,remote: true) do |f| %>
+    <%= form_with(model: @lecture ,remote: true) do |f| %>
         <div class = 'faculty'> 
+        <%= f.label :faculty, "学部"%></br>
         <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
         </div>
 
@@ -9,6 +10,10 @@
         <%= render partial: 'get_departments', locals: {faculty_id: Faculty.first.id } %>
         </div>
 
+        <div class = 'get_educators'>
+        <%= render partial: 'get_educators', locals: {department_id: Department.first.id } %>
+        </div>
+    
         <%= f.submit '登録', class: 'btn btn-primary btn-block' %>    
     <% end %>
 </div>

@@ -1,0 +1,3 @@
+<%= label :educator, "教授名" %><br>
+<%= collection_select :@lecture, :educator, Department.find(department_id).educators, :id, :first_name %> 
+<%# <%= Department.find(2).educators.inspect%> 
