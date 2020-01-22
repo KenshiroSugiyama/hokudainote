@@ -1,23 +1,7 @@
 class NotesController < ApplicationController
     
 
-    def new1
-        @note = current_user.notes.build
-        
-    end
-
-    def new2        
-        @note = current_user.notes.build
-    end
-
-    def new3
-        @note = current_user.notes.build
-    end
-
-    def new4
-        @note = current_user.notes.build
-    end
-
+    
    
 
     def create
@@ -32,12 +16,19 @@ class NotesController < ApplicationController
         end
     end
 
-    def destroy
+    def create1
+        if save(lecture_params)
+            redirect_to new_image_path
+        else
+            render :new
+        end
     end
 
     
 
     private
-
+def lecture_params
+    params.require(:notes1_path).permit(:department_id, :lecture_id)
+end
   
 end

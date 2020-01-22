@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  get 'notes/new1'
-  get 'notes/new2'
-  get 'notes/new3'
-  get 'notes/new4'
+ 
   get 'toppages/index'
   root to: 'toppages#index'
   
+  post 'notes' ,to: 'notes#create'
+  post 'notes1', to: 'notes#create1'
   
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do
@@ -15,8 +14,14 @@ Rails.application.routes.draw do
       collection do
       get 'get_departments'
       get 'get_educators'
+      get 'get_lectures'
       end
   end
+
+  resources :images ,only: [:new, :create],controller: 'notes/images' 
+
+  resources :information ,only: [:new, :create],controller: 'notes/information' 
+
 
   #post '/lectures' , to: 'notes/lectures#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

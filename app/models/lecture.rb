@@ -1,9 +1,8 @@
 class Lecture < ApplicationRecord
-    has_many :notes# optional: true
-    belongs_to :educator
-    has_many :lecture_educators
+    has_many :notes
+    has_many :lectures_educators
     has_many :educators, through: :lectures_educators
-
+    
     def self.import(file)
         csv_text = File.read(Rails.root + 'app/lecture1.csv', encoding: 'encoding')
         changed_csv_text = csv_text.gsub /^$\n/, ''

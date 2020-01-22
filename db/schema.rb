@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_084637) do
+ActiveRecord::Schema.define(version: 2020_01_22_082449) do
 
   create_table "departments", force: :cascade do |t|
     t.integer "faculty_id"
@@ -54,14 +54,13 @@ ActiveRecord::Schema.define(version: 2020_01_17_084637) do
     t.index ["name"], name: "index_faculties_on_name"
   end
 
-  create_table "lecture_educators", force: :cascade do |t|
-    t.integer "educator_id"
-    t.integer "lecture_id"
+  create_table "images", force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "sequence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["educator_id", "lecture_id"], name: "index_lecture_educators_on_educator_id_and_lecture_id", unique: true
-    t.index ["educator_id"], name: "index_lecture_educators_on_educator_id"
-    t.index ["lecture_id"], name: "index_lecture_educators_on_lecture_id"
+    t.string "image"
+    t.index ["note_id"], name: "index_images_on_note_id"
   end
 
   create_table "lectures", force: :cascade do |t|
@@ -72,6 +71,16 @@ ActiveRecord::Schema.define(version: 2020_01_17_084637) do
     t.index ["name"], name: "index_lectures_on_name"
   end
 
+  create_table "lectures_educators", force: :cascade do |t|
+    t.integer "educator_id"
+    t.integer "lecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["educator_id", "lecture_id"], name: "index_lectures_educators_on_educator_id_and_lecture_id", unique: true
+    t.index ["educator_id"], name: "index_lectures_educators_on_educator_id"
+    t.index ["lecture_id"], name: "index_lectures_educators_on_lecture_id"
+  end
+
   create_table "my_notes", force: :cascade do |t|
     t.integer "buyer_id"
     t.integer "note_id"
@@ -79,14 +88,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_084637) do
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_my_notes_on_buyer_id"
     t.index ["note_id"], name: "index_my_notes_on_note_id"
-  end
-
-  create_table "note_images", force: :cascade do |t|
-    t.integer "note_id"
-    t.integer "sequence"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["note_id"], name: "index_note_images_on_note_id"
   end
 
   create_table "notes", force: :cascade do |t|

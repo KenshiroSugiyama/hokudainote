@@ -1,2 +1,3 @@
 class MyNote < ApplicationRecord
+    
 end

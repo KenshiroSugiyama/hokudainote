@@ -1,0 +1,2 @@
+module Notes::ConfirmationHelper
+end

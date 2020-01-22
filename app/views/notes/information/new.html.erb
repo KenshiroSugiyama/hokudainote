@@ -1,0 +1,30 @@
+<div class="row">
+<div class="col-sm-4">
+    <%= form_with url: new_information_path do |f| %>
+        <div class = 'description'> 
+        <%= f.label :description, "説明(授業の詳細)"%></br>
+        <%= f.text_area :description %>
+        </div>
+
+        <div class = 'price'> 
+        <%= f.label :price, "値段"%></br>
+        <%= f.number_field :price %>
+        </div>
+
+        <div class = 'grade'> 
+        <%= f.label :grade, "成績"%></br>
+        <%= f.select :grade, ['A+','A','A-','B+','B','B-','C+','C','落単'] %>
+        </div>
+
+        <div class = 'year'> 
+        <%= f.label :year, "受講年度"%></br>
+        <%= f.number_field :year %>
+        </div>
+
+        
+        <%= f.submit '登録して次へ', class: 'btn btn-primary btn-block' %>    
+    <% end %>
+</div>
+</div>
+
+    

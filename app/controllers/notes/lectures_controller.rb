@@ -1,9 +1,8 @@
 class Notes::LecturesController < ApplicationController
     def new
-        @lecture = Lecture.new
     end
 
-    def create
+    def create   
     end
 
     def get_departments
@@ -11,9 +10,10 @@ class Notes::LecturesController < ApplicationController
     end
 
     def get_educators
-        
-        render partial: 'get_educators', locals: {department_id: params[:department]}
+        render partial: 'get_educators', locals: {department_id: params[:department_id]}
     end
 
-
+    def get_lectures
+        render partial: 'get_lectures', locals: {educator_id: params[:educator]}
+    end
 end
