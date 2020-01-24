@@ -5,23 +5,18 @@ class NotesController < ApplicationController
    
 
     def create
-        @note = current_user.notes.build
-        if @note.save
-            flash[:success] = 'ノートを出品しました！'
-            redirect_to root_url
-        else
-        @notes = current_user.notes.order(id: :desc).page(params[:page])
-            flash.now[:danger] = 'ノートを出品できません'
-            render 'toppages/index'
-        end
+        
     end
 
     def create1
-        if save(lecture_params)
+        @note = Note.new
+        #if
+         @note.save
             redirect_to new_image_path
-        else
-            render :new
-        end
+        #else
+            #render template: "notes/lectures/new"
+            #redirect_to new_lecture_path
+        #end
     end
 
     

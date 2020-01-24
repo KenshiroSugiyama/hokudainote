@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-sm-4">
-    <%= form_with(url: notes1_path,method: :post ,local: true) do |f| %>
+    <%= form_with(model: @note, url: notes1_path,method: :post ,local: true) do |f| %>
         <div class = 'faculty'> 
         <%= f.label :faculty, "学部"%></br>
         <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
