@@ -1,7 +1,7 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$(document).on 'change', '#faculty', ->
+$(document).on 'change', '#note_faculty', ->
   $.ajax(
     type: 'GET'
     url: '/lectures/get_departments'
@@ -12,7 +12,7 @@ $(document).on 'change', '#faculty', ->
     console.info(data)
     $('.get_departments').html(data)
 
-$(document).on 'change','#notes1_path_department_id', ->
+$(document).on 'change','#lectures_path_department_id', ->
   $.ajax(
     type: 'GET'
     url: '/lectures/get_educators'
@@ -23,7 +23,7 @@ $(document).on 'change','#notes1_path_department_id', ->
     console.info(data)
     $('.get_educators').html(data)
 
-$(document).on 'change','#notes1_path_educator', ->
+$(document).on 'change','#lectures_path_educator', ->
   $.ajax(
     type: 'GET'
     url: '/lectures/get_lectures'

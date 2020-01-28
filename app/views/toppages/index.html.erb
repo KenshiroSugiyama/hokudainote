@@ -7,3 +7,8 @@
       <%= render 'notes/notes', notes: @notes %>
 </div>
 
+
+<% @note = Note.last %>
+<% @image = Image.find_by(note_id: @note.id) %>
+<%= image_tag @image.image.url %>
+

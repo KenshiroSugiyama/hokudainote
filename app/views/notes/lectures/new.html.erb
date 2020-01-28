@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-sm-4">
-    <%= form_with(model: @note, url: notes1_path,method: :post ,local: true) do |f| %>
+    <%= form_with(model: @note, url: lectures_path,method: :post ,local: true) do |f| %>
         <div class = 'faculty'> 
         <%= f.label :faculty, "学部"%></br>
         <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
@@ -16,6 +16,25 @@
     
         <div class = 'get_lectures'>
         <%= render partial: 'get_lectures', locals: {educator_id: Educator.first.id } %>
+        </div>
+        <div class = 'description'> 
+        <%= f.label :description, "説明(授業の詳細)"%></br>
+        <%= f.text_area :description %>
+        </div>
+
+        <div class = 'price'> 
+        <%= f.label :price, "値段"%></br>
+        <%= f.number_field :price %>
+        </div>
+
+        <div class = 'grade'> 
+        <%= f.label :grade, "成績"%></br>
+        <%= f.select :grade, ['A+','A','A-','B+','B','B-','C+','C','落単'] %>
+        </div>
+
+        <div class = 'year'> 
+        <%= f.label :year, "受講年度"%></br>
+        <%= f.number_field :year %>
         </div>
         <%= f.submit '登録して次へ', class: 'btn btn-primary btn-block' %>    
     <% end %>

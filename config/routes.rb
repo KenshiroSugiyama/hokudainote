@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get 'toppages/index'
   root to: 'toppages#index'
   
+  get 'confirmation', to: 'notes#confirm'
   post 'notes' ,to: 'notes#create'
   post 'notes1', to: 'notes#create1'
+   
   
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do
@@ -18,9 +20,12 @@ Rails.application.routes.draw do
       end
   end
 
+
+
   resources :images ,only: [:new, :create],controller: 'notes/images' 
 
   resources :information ,only: [:new, :create],controller: 'notes/information' 
+   
 
 
   #post '/lectures' , to: 'notes/lectures#create'

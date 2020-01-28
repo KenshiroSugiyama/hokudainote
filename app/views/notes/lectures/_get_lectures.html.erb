@@ -1,3 +1,3 @@
 <%= label :lecture, "授業名" %><br>
- <%= collection_select :notes1_path, :lecture_id, Educator.find(educator_id).lectures, :id, :name,{prompt: "選択して下さい"} %> 
+ <%= collection_select :lectures_path, :lecture_id, Educator.find(educator_id).lectures, :id, :name,{prompt: "選択して下さい"} %> 
  

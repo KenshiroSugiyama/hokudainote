@@ -1,7 +1,7 @@
 class Note < ApplicationRecord
     belongs_to :user
     belongs_to :lecture
-    has_many :note_images
+    has_many :images
     belongs_to :department
     
    # validates :price ,presence: true 

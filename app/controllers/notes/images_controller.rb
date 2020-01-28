@@ -1,15 +1,22 @@
 class Notes::ImagesController < ApplicationController
     def new
-        @images = Image.new
+        note = Note.find(@note_id)
+        @images = note.images.build
     end
 
     def create
-        @images = Image.new
-        if @images.save
-            redirect_to new_information_path
+        note = Note.find(params[:note_id])
+        @images = note.images.build
+        if @images.save!
+            redirect_to root_path
         else
             render :new
         end
+    end
+
+private
+    def image_params
+        params.require(:image).permit(:image)
     end
 end
 

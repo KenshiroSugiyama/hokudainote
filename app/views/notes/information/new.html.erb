@@ -1,6 +1,8 @@
 <div class="row">
 <div class="col-sm-4">
     <%= form_with url: new_information_path do |f| %>
+
+        
         <div class = 'description'> 
         <%= f.label :description, "説明(授業の詳細)"%></br>
         <%= f.text_area :description %>
