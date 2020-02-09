@@ -1,6 +1,8 @@
 <div class="row">
 <div class="col-sm-4">
     <%= form_with(model: @note, url: lectures_path,method: :post ,local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: @note %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <div class = 'faculty'> 
         <%= f.label :faculty, "学部"%></br>
         <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
@@ -40,5 +42,3 @@
     <% end %>
 </div>
 </div>
-
-    

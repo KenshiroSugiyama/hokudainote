@@ -1,14 +1,41 @@
-<ul class="list-unstyled">
+<div class="container">
+  <div class="row">
   <% notes.each do |note| %>
-    <li class="media mb-3">
-      <div class="media-body">
-        <div class="panel panel-default">
-        <div class="panel-heading"><%= note.id %></div>
-        <div class="panel-body">
-            <%= note.description %> 
+    <div class = "offset-sm-1"></div>
+    <div class="card col-sm-5 mb-3 mx-auto bg-light">
+      <div class="card-body">
+        <div class="card-title">
+        <% lecture = Lecture.find(note.lecture_id)%>
+            教科名：<%= link_to lecture.name, note_path(note.id) %> 
         </div>
+        <div class="card-text">
+        <% if note.educator_id.present?%>
+         <% educator = Educator.find(note.educator_id)%> 
+            教授名：<%= educator.first_name %>  
+        <% else %>
+           教授名なし
+        <% end %>
+        </div>
+        <div class="card-text">
+        <% department = Department.find(note.department_id) %>
+            学部：<%= Faculty.find(department.faculty_id).name %> 
+        </div>
+        <div class="card-text">
+            学科：<%= Department.find(note.department_id).name %> 
+        </div>
+        <div class="card-text">
+            値段：<%= note.price%>円
+        </div>
+        <div class="card-text">
+            成績：<%= note.grade %> 
+        </div>
+        <div class="card-text">
+            年度：<%= note.year %>年度 
         </div>
       </div>
-    </li>
-  <% end %>
-</ul>
+    </div>
+    
+    <% end %>
+  </div>
+</div>
+

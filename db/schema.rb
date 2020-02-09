@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_082449) do
+ActiveRecord::Schema.define(version: 2020_01_31_031701) do
 
   create_table "departments", force: :cascade do |t|
     t.integer "faculty_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_082449) do
     t.integer "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "educator_id"
     t.index ["department_id"], name: "index_notes_on_department_id"
     t.index ["exhibitor_id"], name: "index_notes_on_exhibitor_id"
     t.index ["lecture_id"], name: "index_notes_on_lecture_id"

@@ -8,12 +8,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :resize_to_limit => [700, 700]
 
   #JPGで保存
-    process :convert => 'jpg'
+    #process :convert => 'jpg'
   
-  #サムネイルを生成
-    version :thumb do
-      process :resize_to_limit => [300, 300]
-    end
   
   # jpg,jpeg,gif,pngのみ
     def extension_white_list
@@ -26,11 +22,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
   
   #日付で保存
-    def filename
-      if original_filename.present?
-        time = Time.now
-        name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
-        name.downcase
-      end
-    end
+    #def filename
+      #if original_filename.present?
+        #time = Time.now
+        #name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+        #name.downcase
+      #end
+    #end
 end

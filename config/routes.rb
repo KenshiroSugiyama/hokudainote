@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'confirmation', to: 'notes#confirm'
   post 'notes' ,to: 'notes#create'
   post 'notes1', to: 'notes#create1'
-   
+  resources :notes,only: [:index,:show]
   
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do

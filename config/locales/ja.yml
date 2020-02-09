@@ -1,6 +1,17 @@
 ---
 ja:
   activerecord:
+    models:
+      note: ノート
+    attributes:
+      note:
+        lecture: 授業名
+        price: 値段
+        year: 受講年度
+        department: 学部
+    
+        
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

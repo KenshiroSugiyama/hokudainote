@@ -1,6 +1,7 @@
 <div class="row">
 <div class="col-sm-4">
-    <%= form_with(model: @images, url: images_path, method: :post,local: true ,multipart: true) do |f| %>
+    <%= form_with(model: @images, url: images_path, method: :post ,multipart: true) do |f| %>
+    
     <div class = 'images'>
         <%= f.hidden_field :note_id, value: @note_id %> 
         <%= f.label "画像"%>

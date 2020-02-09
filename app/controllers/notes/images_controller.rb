@@ -4,19 +4,25 @@ class Notes::ImagesController < ApplicationController
         @images = note.images.build
     end
 
-    def create
+    def create 
         note = Note.find(params[:note_id])
-        @images = note.images.build
-        if @images.save!
+        params.permit([:image, :note_id, :sequence])
+        begin
+            params[:image].each_with_index do |image, idx|
+            images = note.images.build(image: image, sequence: idx)
+            images.save!
+            end
             redirect_to root_path
-        else
+        rescue ActiveRecord::RecordInvalid => e
+            puts "保存に失敗しました"
+            flash.now '保存に失敗しました'
             render :new
-        end
+        end     
     end
 
 private
-    def image_params
-        params.require(:image).permit(:image)
-    end
+   def image_params
+    params.permit(:note_id, image: [])
+   end
 end
 

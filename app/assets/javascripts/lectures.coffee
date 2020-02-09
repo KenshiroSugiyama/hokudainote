@@ -23,7 +23,7 @@ $(document).on 'change','#lectures_path_department_id', ->
     console.info(data)
     $('.get_educators').html(data)
 
-$(document).on 'change','#lectures_path_educator', ->
+$(document).on 'change','#lectures_path_educator_id', ->
   $.ajax(
     type: 'GET'
     url: '/lectures/get_lectures'

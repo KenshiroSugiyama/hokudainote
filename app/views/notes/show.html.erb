@@ -1,0 +1,26 @@
+<h2><%= @lecture.name %> </h2>
+<div class = 'container'>
+<div class = 'row'>
+<div class = "col-sm-4">
+<% if @note.images.present? %>
+     <img src="<%= @image.image.url %>">
+<% end %>
+</div>
+<div class="bg-light col-sm-6">
+    <div class="">
+        説明：<%= @note.description %> 
+    </div>
+    <div class="">
+        値段：<%= @note.price%>円 
+    </div>
+    <div class="">
+        成績：<%= @note.grade %> 
+    </div>
+    <div class="">
+        年度：<%= @note.year %>年度 
+    </div>
+    
+    </div>
+</div>
+</div>
+</div>

@@ -8,15 +8,18 @@ class Notes::LecturesController < ApplicationController
         @note.department_id = params[:lectures_path][:department_id]
         @note.lecture_id = params[:lectures_path][:lecture_id]
         @note.description = params[:note][:description]
+        @note.exhibitor_id =params[:note][:user_id]
         @note.price = params[:note][:price]
         @note.grade = params[:note][:grade]
         @note.year = params[:note][:year]
+        @note.educator_id = params[:lectures_path][:educator_id]
 
         if @note.save
             @note_id = @note.id
             render template: "notes/images/new", note_id: @note_id
         else
-            redirect_to new_lecture_path  
+            #flash.now[:danger] = '全て正しく入力して下さい'
+            render :new
         end
     end
 
