@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_031701) do
+ActiveRecord::Schema.define(version: 2020_02_10_043245) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "customer_id"
+    t.string "card_id"
+    t.integer "my_note_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["my_note_id"], name: "index_cards_on_my_note_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.integer "faculty_id"

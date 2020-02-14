@@ -1,26 +1,35 @@
 <h2><%= @lecture.name %> </h2>
 <div class = 'container'>
-<div class = 'row'>
-<div class = "col-sm-4">
-<% if @note.images.present? %>
-     <img src="<%= @image.image.url %>">
-<% end %>
-</div>
-<div class="bg-light col-sm-6">
-    <div class="">
-        説明：<%= @note.description %> 
+    <div class = 'row'>
+        <div class = "col-sm-4">
+            <% if @note.images.present? %>
+                <img src="<%= @image.image.url %>">
+            <% end %>
+        </div>
+        <div class="bg-light col-sm-6">
+            <div class="">
+                説明：<%= @note.description %> 
+            </div>
+            <div class="">
+                値段：<%= @note.price%>円 
+            </div>
+            <div class="">
+                成績：<%= @note.grade %> 
+            </div>
+            <div class="">
+                年度：<%= @note.year %>年度 
+            </div>
+            <div>
+                <% unless current_user.id == @note.exhibitor_id %>
+                    <% unless current_user.buy?(@note) %>
+                        <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
+                        <%= hidden_field_tag :buyer_id, current_user.id %>
+                        <%= hidden_field_tag :note_id, @note.id %>
+                        <%= f.submit '購入', class: 'btn btn-primary btn-block' %>
+                        <% end %>
+                    <% end %>
+                <% end %>    
+            </div>
+        </div>
     </div>
-    <div class="">
-        値段：<%= @note.price%>円 
-    </div>
-    <div class="">
-        成績：<%= @note.grade %> 
-    </div>
-    <div class="">
-        年度：<%= @note.year %>年度 
-    </div>
-    
-    </div>
-</div>
-</div>
 </div>

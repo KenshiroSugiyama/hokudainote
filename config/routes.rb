@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cards/new'
+  get 'cards/show'
+  get 'my_notes/create'
+  get 'my_notes/destroy'
   devise_for :users
   
  
@@ -10,6 +14,10 @@ Rails.application.routes.draw do
   post 'notes1', to: 'notes#create1'
   resources :notes,only: [:index,:show]
   
+  get '/cards/new', to: 'cards#new'
+  get '/cards/show', to: 'cards#show'
+  post '/cards/create', to: 'cards#create'
+
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do
     get 'notes/lectures' ,to: 'notes/lectures#new'
@@ -25,7 +33,7 @@ Rails.application.routes.draw do
   resources :images ,only: [:new, :create],controller: 'notes/images' 
 
   resources :information ,only: [:new, :create],controller: 'notes/information' 
-   
+  resources :my_notes, only: [:create , :destroy]
 
 
   #post '/lectures' , to: 'notes/lectures#create'

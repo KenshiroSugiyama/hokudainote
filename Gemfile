@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 gem 'roo'
 
+gem 'payjp'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'devise'
