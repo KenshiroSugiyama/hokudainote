@@ -22,7 +22,5 @@ class User < ApplicationRecord
     end
   end
 
-  def buy?(note)
-    self.my_notes.include?(note)
-  end
+  
 end

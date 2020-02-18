@@ -1,2 +1,11 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<label>登録クレジットカード</label>
+<div>
+<label>カード番号</label>
+<%= "**** **** ****" + @default_card_information.last4 %>
+</div>
+<div>
+<% exp_month = @default_card_information.exp_month.to_s %>
+<% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+<label>有効期限</label>
+<%= exp_month + " / " + exp_year %>
+</div>

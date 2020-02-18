@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'cards/new'
-  get 'cards/show'
-  get 'my_notes/create'
+  
+  post 'my_notes/create'
   get 'my_notes/destroy'
+  
   devise_for :users
   
  
@@ -10,14 +10,8 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   
   get 'confirmation', to: 'notes#confirm'
-  post 'notes' ,to: 'notes#create'
-  post 'notes1', to: 'notes#create1'
-  resources :notes,only: [:index,:show]
   
-  get '/cards/new', to: 'cards#new'
-  get '/cards/show', to: 'cards#show'
-  post '/cards/create', to: 'cards#create'
-
+  resources :notes,only: [:index,:show] 
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do
     get 'notes/lectures' ,to: 'notes/lectures#new'
@@ -27,6 +21,13 @@ Rails.application.routes.draw do
       get 'get_lectures'
       end
   end
+
+  resources :cards, only: [:new,:show,:create] do
+    collection do 
+      post 'show'
+    end
+  end
+
 
 
 

@@ -9,8 +9,11 @@ class Note < ApplicationRecord
     validates :price ,presence: true 
     validates :year ,presence: true
     validates :grade ,presence: true
-    #validates :exhibitor_id ,presence: true
+    validates :exhibitor_id ,presence: true
     validates :department_id ,presence: true
     validates :lecture_id ,presence: true
     
+    def buyed?(user)
+        self.buyers.include?(user)
+    end
 end

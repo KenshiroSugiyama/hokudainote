@@ -25,7 +25,7 @@ $(function(){
           $("#card_token").append(
             $('<input type="hidden" name="payjp-token">').val(response.id)
           ); 
-          document.inputForm.submit();  // 生成したトークンを送信する準備を整える
+          document.getElementById('charge-form').submit();// 生成したトークンを送信する準備を整える
           alert("登録が完了しました");
         } else {
           alert("正しいカード情報を入力してください。");

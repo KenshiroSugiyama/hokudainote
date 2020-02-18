@@ -2,13 +2,6 @@ class NotesController < ApplicationController
     def confirm
     end
     
-    def create
-        
-    end
-
-    def create1
-    end
-
     def index
         @notes = Note.all
     end
@@ -20,6 +13,7 @@ class NotesController < ApplicationController
         #@user = User.find(@note.exhibitor_id).name
     end
 
+    
     
 
     private

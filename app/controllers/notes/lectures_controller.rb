@@ -8,7 +8,8 @@ class Notes::LecturesController < ApplicationController
         @note.department_id = params[:lectures_path][:department_id]
         @note.lecture_id = params[:lectures_path][:lecture_id]
         @note.description = params[:note][:description]
-        @note.exhibitor_id =params[:note][:user_id]
+        @note.exhibitor_id = current_user.id
+        @note.user_id = params[:note][:user_id]
         @note.price = params[:note][:price]
         @note.grade = params[:note][:grade]
         @note.year = params[:note][:year]
