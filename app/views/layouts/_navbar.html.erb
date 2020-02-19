@@ -7,15 +7,15 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-      <%# <% unless user_signed_in? %> 
+      <% unless user_signed_in? %> 
         <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link'  %></li>
         <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link'  %></li>
-      <%# <% else %> 
+      <% else %> 
         <li class="nav-item"><%= link_to 'ノートを買う', '/notes#index', class: 'nav-link'  %></li>
         <li class="nav-item"><%= link_to 'ノートを売る', new_lecture_path, class: 'nav-link'  %></li>
-        <li class="nav-item"><%= link_to 'マイページ', new_user_session_path, class: 'nav-link'  %></li>
+        <li class="nav-item"><%= link_to 'マイページ', my_pages_home_path, class: 'nav-link'  %></li>
         <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path,method: :delete , class: 'nav-link'  %></li>
-      <%# <% end %> 
+      <% end %> 
       </ul>
     </div>
   </nav>

@@ -10,8 +10,17 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   
   get 'confirmation', to: 'notes#confirm'
+
+  get 'my_pages/home', to: 'my_pages#home'
   
-  resources :notes,only: [:index,:show] 
+  resources :notes,only: [:index,:show]
+  
+  resources :user_profiles , only: [:new, :create,:show,:edit,:update] do 
+    collection do
+      get 'get_departments'
+    end
+  end
+
   
   resources :lectures ,only: [:new,:create],controller: 'notes/lectures' do
     get 'notes/lectures' ,to: 'notes/lectures#new'

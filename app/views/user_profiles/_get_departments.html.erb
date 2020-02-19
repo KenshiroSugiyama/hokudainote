@@ -1,0 +1,5 @@
+
+<%= label :department, "学科" %><br>
+<%= collection_select :lectures_path ,:department_id, Department.where(faculty_id: faculty_id), :id, :name,{prompt: "選択して下さい"} %>
+
+

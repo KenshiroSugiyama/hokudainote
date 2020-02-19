@@ -2,7 +2,7 @@
 <div class="col-sm-4">
     <%= form_with(model: @images, url: images_path, method: :post ,multipart: true) do |f| %>
     
-    <div class = 'images'>
+    <div >
         <%= f.hidden_field :note_id, value: @note_id %> 
         <%= f.label "画像"%>
         <%= f.file_field :image, multiple: true %>

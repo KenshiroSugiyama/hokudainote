@@ -1,11 +1,20 @@
-<label>登録クレジットカード</label>
-<div>
-<label>カード番号</label>
-<%= "**** **** ****" + @default_card_information.last4 %>
+<div class="text-center">
+<h2>登録クレジットカード</h2>
 </div>
-<div>
-<% exp_month = @default_card_information.exp_month.to_s %>
-<% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
-<label>有効期限</label>
-<%= exp_month + " / " + exp_year %>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <div class = 'card card-body bg-light'>
+        <div>
+        <label>カード番号</label>
+
+        <%= "**** **** ****" + @default_card_information.last4 %>
+        </div>
+        <div>
+        <% exp_month = @default_card_information.exp_month.to_s %>
+        <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+        <label>有効期限</label>
+        <%= exp_month + " / " + exp_year %>
+        </div>
+    </div>
+  </div>
 </div>

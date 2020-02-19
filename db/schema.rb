@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_043245) do
     t.integer "user_id"
     t.integer "department_id"
     t.integer "school_year"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_user_profiles_on_department_id"

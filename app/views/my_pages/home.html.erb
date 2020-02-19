@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h2>マイページ</h2>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <div class="card card-body bg-light mb-3">
+        <%= link_to 'プロフィール',user_profile_path(id: current_user.id)%>
+    </div>
+    <div class="card card-body bg-light mb-3">
+        <%= link_to '売上管理',root_path%>
+    </div>
+    <div class="card card-body bg-light mb-3">
+        <%= link_to 'ノート管理',root_path%>
+    </div>
+    <div class="card card-body bg-light mb-3">
+        <%= link_to '口座登録',root_path%>
+    </div>
+    <div class="card card-body bg-light mb-3">
+        <%= link_to 'クレジッットカード登録',card_path(id: @card.id)%>
+    </div>
+  </div>
+</div>
