@@ -1,0 +1,38 @@
+<div class="text-center">
+<h2>売上一覧 </h2>
+</div>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = "offset-sm-3">
+        </div>
+        <div class = "col-sm-6">
+        <div class="text-center">
+        
+        <table class = "tabel table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>講義名</th>
+                    <th>金額</th>
+                    <th>部数</th>
+                    <th>売上金</th>
+                </tr>
+    　　　　　</thead>
+            <tbody>
+            <% @note.each do |note| %>
+            <% @lecture = Lecture.find(note.lecture_id)%>
+            <tr>
+            <% sale = MyNote.where(note_id: note.id) %>
+            <% sales = note.price * sale.count %>
+                <th><%= @lecture.name%></th>            
+                <th class= "text-right"><%= note.price %>円</th>
+                <th><%= sale.count%>部</th>
+                <td><%= sales%>円</td>
+            </tr> 
+            <% end %>
+        　　</tbody>            
+        </table>
+        
+        </div>
+        </div>
+    </div>
+</div>

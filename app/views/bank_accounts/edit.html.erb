@@ -1,0 +1,42 @@
+<div class="text-center">
+  <h2>口座登録</h2>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+    <%= form_with(model: @account,url: {controller: 'bank_accounts', action: 'update' },method: :put,  local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: @account %>
+      <div class="form-group">
+        <%= f.label :bank_id, '銀行名' %>
+        <%= f.collection_select :bank_id, Bank.all, :id, :name,{prompt: "選択して下さい"} %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :branch, '支店番号' %>
+        <%= f.number_field :branch, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :account, '口座番号' %>
+        <%= f.number_field :account, class: 'form-control' %>
+      </div>
+
+      <div class = 'form-group'> 
+        <%= f.label :kind, "口座種別"%></br>
+        <%= f.select :kind,['普通'],{prompt: "選択して下さい"}, class: 'form-control'%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sex, '性(半角大文字)' %>
+        <%= f.text_field :sex, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :name, '名(半角大文字)' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+     
+      <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

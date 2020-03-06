@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'my_pages/home', to: 'my_pages#home'
   
   resources :notes,only: [:index,:show]
+
+  resources :sales,only: [:index,:show]
   
   resources :user_profiles , only: [:new, :create,:show,:edit,:update] do 
     collection do
@@ -44,6 +46,8 @@ Rails.application.routes.draw do
 
   resources :information ,only: [:new, :create],controller: 'notes/information' 
   resources :my_notes, only: [:create , :destroy]
+
+  resources :bank_accounts, only: [:new,:create,:show,:edit,:update]
 
 
   #post '/lectures' , to: 'notes/lectures#create'

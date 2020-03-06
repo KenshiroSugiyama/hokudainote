@@ -11,3 +11,7 @@ require "csv"
 #CSV.foreach('db/.csv').each do |row|
     #Department.find(1).educators.create(first_name: row[0])
 #end
+
+Bank.create(name: "北洋銀行")
+Bank.create(name: "北海道銀行")
+Bank.create(name: "ゆうちょ銀行")

@@ -3,12 +3,21 @@ ja:
   activerecord:
     models:
       note: ノート
+      account: 銀行口座
     attributes:
       note:
         lecture: 授業名
         price: 値段
         year: 受講年度
         department: 学部
+      account:
+        branch: 支店番号
+        account: 口座番号
+        sex: 性
+        name: 名
+      
+  
+      
     
         
 

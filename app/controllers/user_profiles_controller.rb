@@ -29,9 +29,26 @@ class UserProfilesController < ApplicationController
     end
 
     def edit 
+        @profile = UserProfile.find(current_user.id)
     end
 
     def update
+        @profile = UserProfile.find(current_user.id)
+        @profile.name = params[:user_profile][:name]
+        @profile.school_year = params[:user_profile][:school_year]
+        @profile.department_id = params[:lectures_path][:department_id]
+        if @profile.update(profile_params)
+            flash[:success] = 'プロフィールを更新しました'
+            redirect_to user_profile_path(id: current_user.id)
+        else
+            flash.now[:danger] = 'プロフィールを更新できません'
+            render :edit
+        end
+    end
+
+    private
+    def profile_params
+        params.require(:user_profile).permit(:name,:school_year,:lectures_path =>[:department_id])
     end
 
 end

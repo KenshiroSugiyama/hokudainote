@@ -13,6 +13,7 @@ class Notes::ImagesController < ApplicationController
             images.save!
             end
             redirect_to root_path
+            flash[:success] ='pdfを保存しました'
         rescue ActiveRecord::RecordInvalid => e
             puts "保存に失敗しました"
             flash.now '保存に失敗しました'

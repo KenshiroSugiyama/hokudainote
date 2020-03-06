@@ -9,6 +9,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   #validate :check_email
   has_many :cards
+  has_one :bank_account
+
+  
 
   def check_email
     if email !~ /^@eis.hokudai.ac.jp/

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
   <% notes.each do |note| %>
+  <%# <% unless current_user.id = note.exhibitor_id %> 
     <div class = "offset-sm-1"></div>
     <div class="card col-sm-5 mb-3 mx-auto bg-light">
       <div class="card-body">
@@ -32,10 +33,18 @@
         <div class="card-text">
             年度：<%= note.year %>年度 
         </div>
+        <div class="card-text">
+        <% exhibitor = UserProfile.find_by(user_id: note.exhibitor_id)%>
+        <% if note.exhibitor_id.present?%>
+            出品者：<%= exhibitor.name %>
+        <% else %>
+            出品者: 不明
+        <% end %>
+        </div>
       </div>
     </div>
-    
     <% end %>
+  <%# <% end %> 
   </div>
 </div>
 

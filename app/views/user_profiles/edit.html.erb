@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h2>プロフィール編集ページ</h2>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+    <%= form_with(model: @profile,url: {controller: 'user_profiles', action: 'update' },method: :put,  local: true) do |f| %>
+      
+      <div class="form-group">
+        <%= f.label :name, 'ニックネーム' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :school_year, '学年' %>
+        <%= f.number_field :school_year, class: 'form-control' %>
+      </div>
+
+      <div class = 'faculty'> 
+        <%= f.label :faculty, "学部"%></br>
+        <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
+      </div>
+
+      <div class = 'get_departments'>
+        <%= render partial: 'get_departments', locals: {faculty_id: Faculty.first.id } %>
+      </div>
+
+     
+      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

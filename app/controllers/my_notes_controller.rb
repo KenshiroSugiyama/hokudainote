@@ -16,7 +16,7 @@ class MyNotesController < ApplicationController
       customer: card.customer_id,
       currency: 'jpy',
       )
-      flash[:notice] = '購入しました'
+      flash[:success] = '購入しました'
       redirect_to root_path
     end 
   end

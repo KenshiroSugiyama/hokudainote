@@ -13,13 +13,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   # jpg,jpeg,gif,pngのみ
     def extension_white_list
-      %w(jpg jpeg gif png)
+      %w(pdf)
     end
   
   #ファイル名を変更し拡張子を同じにする
-    def filename
-      super.chomp(File.extname(super)) + '.jpg' 
-    end
+    #def filename
+      #super.chomp(File.extname(super)) + '.pdf' 
+    #end
   
   #日付で保存
     #def filename

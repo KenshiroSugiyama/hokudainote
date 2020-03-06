@@ -1,4 +1,6 @@
+<div class="text-center">
 <h2><%= @lecture.name %> </h2>
+</div>
 <div class = 'container'>
     <div class = 'row'>
         <div class = "col-sm-4">
@@ -19,6 +21,11 @@
             <div class="">
                 年度：<%= @note.year %>年度 
             </div>
+            <% if @note.exhibitor_id.present? %>
+            <div class="">
+                出品者：<%= @exhibitor.name %>
+            </div>
+            <% end %>
             <div>
                 <% unless current_user.id == @note.exhibitor_id %>
                     <% unless @note.buyed?(current_user) %>
