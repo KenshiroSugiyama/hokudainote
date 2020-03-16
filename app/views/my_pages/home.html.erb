@@ -4,23 +4,23 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <div class="card card-body bg-light mb-3">
-        <%= link_to 'プロフィール',user_profile_path(id: current_user.id)%>
+        <%= link_to 'プロフィール',user_profile_path(id: current_user.id), class: "text-center"%>
     </div>
     <div class="card card-body bg-light mb-3">
-        <%= link_to '売上管理',sales_path%>
+        <%= link_to '売上管理',sales_path, class: "text-center"%>
     </div>
     <div class="card card-body bg-light mb-3">
-        <%= link_to 'ノート管理',root_path%>
+        <%= link_to 'ノート管理',releases_path, class: "text-center"%>
     </div>
     <div class="card card-body bg-light mb-3">
     <% unless current_user.bank_account.present?%>
-        <%= link_to '口座登録',new_bank_account_path%>
+        <%= link_to '口座登録',new_bank_account_path, class: "text-center"%>
     <% else %>
-        <%= link_to '銀行口座',bank_account_path(@account)%>
+        <%= link_to '銀行口座',bank_account_path(@account), class: "text-center"%>
     <% end %>
     </div>
     <div class="card card-body bg-light mb-3">
-        <%= link_to 'クレジッットカード登録',card_path(id: @card.id)%>
+        <%= link_to 'クレジッットカード登録',card_path(id: @card.id), class: "text-center"%>
     </div>
   </div>
 </div>

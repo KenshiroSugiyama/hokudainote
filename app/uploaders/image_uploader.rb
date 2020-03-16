@@ -5,16 +5,16 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
 
-  process :resize_to_limit => [700, 700]
+  process resize_to_limit: [400, 300]
 
   #JPGで保存
     #process :convert => 'jpg'
   
   
   # jpg,jpeg,gif,pngのみ
-    def extension_white_list
-      %w(pdf)
-    end
+    #def extension_white_list
+      #%w(pdf)
+    #end
   
   #ファイル名を変更し拡張子を同じにする
     #def filename

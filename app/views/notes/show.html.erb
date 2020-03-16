@@ -1,46 +1,52 @@
 <div class="text-center">
 <h2><%= @lecture.name %> </h2>
 </div>
-<div class = 'container'>
-    <div class = 'row'>
-        <div class = "col-sm-4">
-            <% if @note.images.present? %>
-                <img src="<%= @image.image.url %>">
-            <% end %>
-        </div>
-        <div class="bg-light col-sm-6">
-            <div class="">
-                説明：<%= @note.description %> 
-            </div>
-            <div class="">
-                値段：<%= @note.price%>円 
-            </div>
-            <div class="">
-                成績：<%= @note.grade %> 
-            </div>
-            <div class="">
-                年度：<%= @note.year %>年度 
-            </div>
-            <% if @note.exhibitor_id.present? %>
-            <div class="">
-                出品者：<%= @exhibitor.name %>
-            </div>
-            <% end %>
-            <div>
-                <% unless current_user.id == @note.exhibitor_id %>
-                    <% unless @note.buyed?(current_user) %>
-                        <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
+
+<div class="text-center">
+        <h5 class="">
+            説明：<%= @note.description %> 
+        </h5>
+        <h5 class="">
+            値段：<%= @note.price%>円 
+        </h5>
+        <h5 class="">
+            成績：<%= @note.grade %> 
+        </h5>
+        <h5 class="">
+            年度：<%= @note.year %>年度 
+        </h5>
+        <% if @note.exhibitor_id.present? %>
+        <h5 class="">
+            出品者：<%= @exhibitor.name %>
+        </h5>
+        <% end %>
+        <div>
+            <% unless current_user.id == @note.exhibitor_id %>
+                <% unless @note.buyed?(current_user) %>
+                    <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
                         <%= hidden_field_tag :buyer_id, current_user.id %>
                         <%= hidden_field_tag :note_id, @note.id %>
                         <%= f.submit '購入', class: 'btn btn-primary btn-block' %>
-                        <% end %>
-                    <% else %>
-                        <div class = "text-center"> 
-                        購入済み
-                        </div>
                     <% end %>
-                <% end %>    
-            </div>
+                <% else %>
+                    <div class = "text-center"> 
+                    購入済み
+                    </div>
+                <% end %>
+            <% end %>    
         </div>
+</div>
+
+<div class = "row">
+    <div class = "col-sm-10 offset-sm-1 text-center">
+        <% if @note.images.present? %>
+            <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
+                <% @image.each do |i|%>
+                    <div><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
+                <% end %>                
+            <% else %>
+                <img src="<%= @i.image.url %>">
+            <% end %>
+        <% end %>
     </div>
 </div>

@@ -7,3 +7,4 @@ $(document).on 'change', '#lecture_department_id', ->
     }
   ).done (data) ->
     $('.department').html(data)
+

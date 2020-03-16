@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h2>ノート管理</h2>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <h4 class="text-center">購入したノート</h4>
+    <div class="card card-body bg-light">
+    <% @buy.each do |buy| %>
+    <% note= Note.find(buy.note_id)%>
+    <% lecture = Lecture.find(note.lecture_id) %>
+      <div class="card card-body mb-1">
+          <%= link_to lecture.name,note_path(note), class: "text-center"%>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+  <h4 class="text-center">公開したノート</h4>
+    <div class="card card-body bg-light ">
+    <% @sell.each do |sell| %>
+    <% lecture = Lecture.find(sell.lecture_id) %>
+      <div class="card card-body  mb-1">
+          <%= link_to lecture.name,note_path(sell), class: "text-center"%>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

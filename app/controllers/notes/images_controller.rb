@@ -12,11 +12,11 @@ class Notes::ImagesController < ApplicationController
             images = note.images.build(image: image, sequence: idx)
             images.save!
             end
-            redirect_to root_path
-            flash[:success] ='pdfを保存しました'
+            redirect_to note_path(note)
+            flash[:success] ='ノートを公開しました'
         rescue ActiveRecord::RecordInvalid => e
-            puts "保存に失敗しました"
-            flash.now '保存に失敗しました'
+            puts "公開に失敗しました"
+            #flash.now '保存に失敗しました'
             render :new
         end     
     end

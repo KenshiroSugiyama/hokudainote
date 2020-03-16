@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :notes,only: [:index,:show]
 
   resources :sales,only: [:index,:show]
+
+  resources :releases, only: [:index,:show]
   
   resources :user_profiles , only: [:new, :create,:show,:edit,:update] do 
     collection do
