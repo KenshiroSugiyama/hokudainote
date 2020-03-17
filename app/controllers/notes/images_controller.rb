@@ -1,6 +1,6 @@
 class Notes::ImagesController < ApplicationController
     def new
-        note = Note.find(@note_id)
+        @note = Note.find(@note_id)
         @images = note.images.build
     end
 
@@ -14,11 +14,15 @@ class Notes::ImagesController < ApplicationController
             end
             redirect_to note_path(note)
             flash[:success] ='ノートを公開しました'
+
+           
         rescue ActiveRecord::RecordInvalid => e
             puts "公開に失敗しました"
             #flash.now '保存に失敗しました'
             render :new
         end     
+
+        
     end
 
 private

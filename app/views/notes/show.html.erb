@@ -39,14 +39,16 @@
 
 <div class = "row">
     <div class = "col-sm-10 offset-sm-1 text-center">
-        <% if @note.images.present? %>
-            <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
-                <% @image.each do |i|%>
-                    <div><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
-                <% end %>                
-            <% else %>
-                <img src="<%= @i.image.url %>">
+        <div class= "a">
+            <% if @note.images.present? %>
+                <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
+                    <% @image.each do |i|%>
+                        <div><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
+                    <% end %>                
+                <% else %>
+                    <img src="<%= @i.image.url %>">
+                <% end %>
             <% end %>
-        <% end %>
+        </div>
     </div>
 </div>

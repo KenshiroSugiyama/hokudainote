@@ -16,3 +16,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $('.a').slick({
+        dots: true,
+    });
+});
+
