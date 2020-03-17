@@ -23,9 +23,12 @@ class UserProfilesController < ApplicationController
     end
 
     def show
-        @department = Department.find(current_user.user_profile.department_id)
-        @faculty = Faculty.find(@department.faculty_id).name
-        
+        unless current_user.user_profile
+            @profile = current_user.build_user_profile
+            return render :new
+        end
+        @department = current_user.user_profile.department
+        @faculty = @department.faculty
     end
 
     def edit 

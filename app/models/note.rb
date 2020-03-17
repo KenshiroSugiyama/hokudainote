@@ -5,6 +5,7 @@ class Note < ApplicationRecord
     belongs_to :department
     has_many :my_notes
     has_many :buyers,through: :my_notes
+    belongs_to :exhibitor, class_name: 'User', foreign_key: :exhibitor_id
     
     validates :price ,presence: true 
     validates :year ,presence: true
