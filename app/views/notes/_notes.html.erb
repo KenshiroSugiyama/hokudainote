@@ -12,7 +12,7 @@
         <div class="card-text">
         <% if note.educator_id.present?%>
          <% educator = Educator.find(note.educator_id)%> 
-            教授名：<%= educator.first_name %>  
+            教授名：<%= educator.full_name %>  
         <% else %>
            教授名なし
         <% end %>

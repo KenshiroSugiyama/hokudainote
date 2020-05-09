@@ -4,7 +4,7 @@
     </h3>
     <div class = "card-form">
         <div class = "card-form__box">
-            <%= form_with(model: @card,url: cards_create_path, method: :post, id: 'charge-form', name: "inputForm",local: true) do |f|%>
+            <%= form_with(model: @card,url: {controller: 'cards',action: 'create'}, method: :post, id: 'charge-form', name: "inputForm",local: true) do |f|%>
             <div class = "card-form__box__number">
                 <label {class:'box-group--label', for: 'card_number'}> カード番号</label>
                 <span class = "bg-warning">必須</span>

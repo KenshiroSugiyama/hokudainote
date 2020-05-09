@@ -3,8 +3,8 @@ require "csv"
   faculty = Faculty.find_by(name: fac_item)
   faculty = Faculty.create(name: fac_item) unless faculty
 
-  ["応用理工学科"].each do |dep_item|
-    dep = faculty.departments.find_by(name: dep_item)
+  ["応用理工学科","環境社会工学科","情報エレクトロニクス工学科","機械知能工学科"].each do |dep_item|
+    dep = faculty.depaartments.find_by(name: dep_item)
     faculty.departments.create(name: dep_item) unless dep
   end
 end
@@ -18,11 +18,11 @@ CSV.foreach('db/a.csv').each do |row|
   end
 end
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 #Bank.create(name: "北洋銀行")
 #Bank.create(name: "北海道銀行")
 #Bank.create(name: "ゆうちょ銀行")
-=======
+#=======
 CSV.foreach('db/e.csv').each do |row|
   lecture = Lecture.find_by(name: row[0])
   Lecture.create(name: row[0]) unless lecture
@@ -53,4 +53,4 @@ end
     Bank.create(name: bank)
   end
 end
->>>>>>> kobayashi_review
+#>>>>>>> kobayashi_review

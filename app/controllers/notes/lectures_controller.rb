@@ -1,6 +1,7 @@
 class Notes::LecturesController < ApplicationController
     def new
         @note = current_user.notes.build
+        
     end
 
     def create  
