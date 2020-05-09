@@ -101,7 +101,7 @@ $( document ).on('turbolinks:load', function() {
       function setUrl(imgIdx) {
         var reader = new FileReader();
         reader.onload = function (e) {
-          $(`#img_prev_${imgIdx}`).attr('src', e.target.result);
+          $('#img_prev_${imgIdx}').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[imgIdx]);  
       }
