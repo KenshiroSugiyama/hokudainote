@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_111200) do
+ActiveRecord::Schema.define(version: 2020_03_17_071513) do
 
   create_table "bank_accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -27,17 +27,9 @@ ActiveRecord::Schema.define(version: 2020_03_01_111200) do
   end
 
   create_table "banks", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "bank_id"
-    t.string "branch"
-    t.string "account"
-    t.string "kind"
-    t.string "sex"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bank_id"], name: "index_banks_on_bank_id"
-    t.index ["user_id"], name: "index_banks_on_user_id"
   end
 
   create_table "cards", force: :cascade do |t|
@@ -60,20 +52,11 @@ ActiveRecord::Schema.define(version: 2020_03_01_111200) do
     t.index ["name"], name: "index_departments_on_name"
   end
 
-  create_table "educator_positions", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "educators", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "educator_position_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["educator_position_id"], name: "index_educators_on_educator_position_id"
     t.index ["last_name"], name: "index_educators_on_last_name"
   end
 
@@ -104,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_03_01_111200) do
 
   create_table "lectures", force: :cascade do |t|
     t.string "name"
-    t.integer "educators_educator_position_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_lectures_on_name"

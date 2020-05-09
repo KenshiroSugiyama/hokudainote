@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   post 'my_notes/create'
   get 'my_notes/destroy'
   
-  devise_for :users
+  devise_for :users, controllers: {
+    confirmations: 'users/confirmations',
+  }
   
  
   get 'toppages/index'
   root to: 'toppages#index'
   
-  get 'confirmation', to: 'notes#confirm'
-
   get 'my_pages/home', to: 'my_pages#home'
   
   resources :notes,only: [:index,:show]
