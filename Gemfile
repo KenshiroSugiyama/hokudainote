@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 gem 'roo'
-gem 'wdm', '>= 0.1.0'
+#gem 'wdm', '>= 0.1.0'
 gem 'payjp'
 gem 'rmagick'
 gem 'carrierwave'
@@ -74,3 +74,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+platforms :mswin do 
+  gem "wdm", :group => [:development]
+end
