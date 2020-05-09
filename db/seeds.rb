@@ -4,7 +4,7 @@ require "csv"
   faculty = Faculty.create(name: fac_item) unless faculty
 
   ["応用理工学科","環境社会工学科","情報エレクトロニクス工学科","機械知能工学科"].each do |dep_item|
-    dep = faculty.depaartments.find_by(name: dep_item)
+    dep = faculty.departments.find_by(name: dep_item)
     faculty.departments.create(name: dep_item) unless dep
   end
 end
