@@ -76,6 +76,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-platforms :mswin do 
+platforms :mingw, :mswin, :x64_mingw, :jruby do 
   gem "wdm", :group => [:development]
 end
