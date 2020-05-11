@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+gem 'omniauth-google-oauth2'
 gem 'roo'
 #gem 'wdm', '>= 0.1.0'
 gem 'payjp'
