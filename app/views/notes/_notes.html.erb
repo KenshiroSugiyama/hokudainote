@@ -34,9 +34,13 @@
             年度：<%= note.year %>年度 
         </div>
         <div class="card-text">
-        <% exhibitor = UserProfile.find_by(user_id: note.exhibitor_id)%>
-        <% if note.exhibitor_id.present?%>
-            出品者：<%= exhibitor.name %>
+        <% if UserProfile.find_by(user_id: note.exhibitor_id).present? %>
+            <% exhibitor = UserProfile.find_by(user_id: note.exhibitor_id)%>
+            <% if exhibitor.name.present?%>
+                出品者：<%= exhibitor.name %>
+            <% else %>
+                出品者：　不明
+            <% end %>
         <% else %>
             出品者: 不明
         <% end %>

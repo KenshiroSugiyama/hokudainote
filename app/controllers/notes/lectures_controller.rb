@@ -1,7 +1,12 @@
 class Notes::LecturesController < ApplicationController
     def new
-        @note = current_user.notes.build
-        
+        if user_signed_in?
+            @note = current_user.notes.build   
+        else
+            redirect_to new_user_session_path
+            flash[:alert] = 'ノートを売るにはログインが必要です'
+        end
+
     end
 
     def create  
