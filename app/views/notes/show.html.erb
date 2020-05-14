@@ -15,11 +15,13 @@
         <h5 class="">
             年度：<%= @note.year %>年度 
         </h5>
-        <% if @note.exhibitor_id.present? %>
         <h5 class="">
+        <% if UserProfile.find_by(user_id: @note.exhibitor_id).present? && UserProfile.find_by(user_id: @note.exhibitor_id).name.present? %>
             出品者：<%= @exhibitor.name %>
-        </h5>
+        <% else %>
+            出品者: 不明
         <% end %>
+        </h5>
         <div>
             <% unless current_user.id == @note.exhibitor_id %>
                 <% unless @note.buyed?(current_user) %>
