@@ -4,12 +4,18 @@ Rails.application.routes.draw do
   get 'my_notes/destroy'
   
   devise_for :users, controllers: {
+    #registrations: 'users/registrations',
     confirmations: 'users/confirmations',
     omniauth_callbacks: 'users/omniauth_callbacks',
   }
   
+  devise_scope :user do
+    get 'accepted' => 'users/registrations#accepted'
+  end
  
   get 'toppages/index'
+  get 'toppages/rule'
+  get 'toppages/form'
   root to: 'toppages#index'
   
   get 'my_pages/home', to: 'my_pages#home'

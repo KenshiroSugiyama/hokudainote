@@ -11,7 +11,7 @@ class User < ApplicationRecord
   #validate :check_email
   has_many :cards
   has_one :bank_account
-
+  validates :accepted, presence: {message: 'を入力してください'}
   
 
   def check_email
