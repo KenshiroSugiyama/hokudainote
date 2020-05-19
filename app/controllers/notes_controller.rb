@@ -13,7 +13,7 @@ class NotesController < ApplicationController
             @lecture = Lecture.find(@note.lecture_id)
             @exhibitor = UserProfile.find_by(user_id: @note.exhibitor_id)
             #@user = User.find(@note.exhibitor_id).name
-            @i = Image.find_by(note_id: params[:id])
+            @i = Image.where(note_id: @note.id).where(sequence: 0)
         else
             redirect_to new_user_session_path
             flash[:alert] = '詳細を見るにはログインが必要です'

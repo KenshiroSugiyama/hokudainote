@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     #registrations: 'users/registrations',
     confirmations: 'users/confirmations',
-    omniauth_callbacks: 'users/omniauth_callbacks',
+    #omniauth_callbacks: 'users/omniauth_callbacks',
   }
   
   devise_scope :user do
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'toppages/index'
   get 'toppages/rule'
   get 'toppages/form'
+  get 'toppages/profile'
   root to: 'toppages#index'
   
   get 'my_pages/home', to: 'my_pages#home'

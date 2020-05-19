@@ -7,4 +7,7 @@ class ToppagesController < ApplicationController
 
   def form
   end
+
+  def profile
+  end
 end
