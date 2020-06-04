@@ -1,5 +1,5 @@
 class Card < ApplicationRecord
     require 'payjp'
-  Payjp.api_key = Rails.application.credentials.dig(:payjp, :sk_test_c488b942b82d9928d5c39a74)
+  Payjp.api_key = Rails.application.credentials.dig(:payjp, :ENV['PAYJP_PRIVATE_KEY'])
     belongs_to :user
 end

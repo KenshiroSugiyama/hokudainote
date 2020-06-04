@@ -10,7 +10,7 @@ class MyNotesController < ApplicationController
 
 
       card = current_user.cards.first
-      Payjp.api_key = "sk_test_c488b942b82d9928d5c39a74"
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       charge = Payjp::Charge.create(
       amount: @note.price,
       customer: card.customer_id,

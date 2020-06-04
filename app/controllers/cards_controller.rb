@@ -7,7 +7,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = "sk_test_c488b942b82d9928d5c39a74"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -30,7 +30,7 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = "sk_test_c488b942b82d9928d5c39a74"
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end

@@ -28,6 +28,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #   super(scope)
   # end
 
+  def twitter
+    callback_for(:twitter)
+  end
+
   # callback for google
   def google_oauth2
     callback_for(:google)
