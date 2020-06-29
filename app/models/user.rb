@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: %i[google_oauth2]
-  #validate :check_email
+  validate :check_email
   has_many :cards
   has_one :bank_account
  # validates :accepted, presence: {message: 'を入力してください'}
