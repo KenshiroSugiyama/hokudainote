@@ -1,3 +1,45 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// header.mb-4.sticky-top {
+//   margin: 0 ;
+//   padding-bottom: 0 ;
+//   border-bottom: 0 ;
+// }
+
+
+
+div.container1 {
+    margin: 0 ;
+    background-image: url('note.jpg') ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    z-index: 0;
+  }
+  // div::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -5px;
+  //   bottom: -5px;
+  //   left: -5px;
+  //   right: -5px;
+  //   background: inherit;
+  //   filter: blur(2px);
+  //   z-index: -1;
+  // }
+  .text{
+    margin-left: 30px ;
+    margin-right: 30px;
+  }
+  
+  // nav.navbar.navbar-expand-sm.navbar-dark.bg-dark {
+  //   // padding-bottom: 0 ;
+  //   // border-bottom: 0 ;
+  //   margin-bottom: 0 ;
+  // }
+
