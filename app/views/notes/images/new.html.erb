@@ -1,14 +1,14 @@
-<div class="row">
-    <div class="col-sm-8">
+<div class="row ml-4 mr-4 pt-5">
+    <div class="offset-sm-4 col-sm-4">
         <%= form_with(model: @images, url: images_path, method: :post ,multipart: true) do |f| %>
             <%= f.hidden_field :note_id, value: @note_id %> 
             <%= f.label "画像"%>
-            <%= f.file_field :image, multiple: true,id: 'post_img' %> 
+            <%= f.file_field :image, multiple: true,id: 'post_img',class: "mb-4" %> 
             <div class="img_prev_wrap">
                 <img id="img_prev" src="" visibility='hidden' />  
             </div>
             <br><br>
-            <%= f.submit '画像をアップロード', class: ' btn btn-primary btn-block'%>
+            <%= f.submit '画像をアップロード', class: ' btn btn-primary btn-block mb-5'%>
             
         <% end %>
     </div>
