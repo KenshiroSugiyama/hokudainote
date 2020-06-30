@@ -32,7 +32,7 @@ class UserProfilesController < ApplicationController
     end
 
     def edit 
-        @profile = UserProfile.find(current_user.id)
+        @profile = UserProfile.find_by(user_id: current_user.id)
     end
 
     def update

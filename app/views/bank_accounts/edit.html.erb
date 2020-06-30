@@ -1,9 +1,9 @@
-<div class="text-center">
-  <h2>口座登録</h2>
+<div class="text-center pt-4">
+  <h2>口座編集</h2>
 </div>
 
-<div class="row">
-  <div class="col-sm-6 offset-sm-3">
+<div class="row pt-4 ml-5 mr-5">
+  <div class="offset-sm-4 col-sm-4 ">
 
     <%= form_with(model: @account,url: {controller: 'bank_accounts', action: 'update' },method: :put,  local: true) do |f| %>
       <%= render 'layouts/error_messages', model: @account %>
@@ -36,7 +36,7 @@
         <%= f.text_field :name, class: 'form-control' %>
       </div>
      
-      <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '更新', class: 'btn btn-info btn-block mt-5 mb-5' %>
     <% end %>
   </div>
 </div>

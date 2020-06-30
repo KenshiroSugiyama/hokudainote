@@ -1,8 +1,8 @@
-<div class="text-center">
+<div class="text-center pt-5">
 <h2><%= @lecture.name %> </h2>
 </div>
 
-<div class="text-center">
+<div class="text-center pt-4">
         <h5 class="">
             説明：<%= @note.description %> 
         </h5>
@@ -31,7 +31,7 @@
                         <%= f.submit '購入', class: 'offset-sm-5 col-sm-2 btn btn-primary btn-block' %>
                     <% end %>
                 <% else %>
-                    <div class = "text-center"> 
+                    <div class = "text-center pt-3"> 
                     購入済み
                     </div>
                 <% end %>
@@ -40,12 +40,12 @@
 </div>
 <br><br>
 <div class = "row">
-    <div class = "col-sm-10 offset-sm-1 text-center">
+    <div class = "col-sm-10 offset-sm-1 text-center mb-5">
         <div class= "a">
             <% if @note.images.present? %>
                 <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
                     <% @image.each do |i|%>
-                        <div><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
+                        <div class="mb-3"><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
                     <% end %>                
                 <% else %>
                     <img src="<%= @i[0].image.url %>">

@@ -1,9 +1,9 @@
-<div class="text-center">
-  <h1>プロフィール</h1>
+<div class="text-center pt-4">
+  <h2>プロフィール</h2>
 </div>
 
-<div class="row">
-  <div class="col-sm-6 offset-sm-3">
+<div class="row pl-5 pr-5 pt-3">
+  <div class="col-sm-6 offset-sm-3 text-center">
 
     <%= form_with(model: @profile,url: user_profiles_path,method: :post,  local: true) do |f| %>
       
@@ -22,12 +22,12 @@
         <%= f.collection_select :faculty, Faculty.all, :id, :name,{prompt: "選択して下さい"} %>
       </div>
 
-      <div class = 'get_departments'>
+      <div class = 'get_departments mt-3'>
         <%= render partial: 'get_departments', locals: {faculty_id: Faculty.first.id } %>
       </div>
 
      
-      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '登録', class: 'btn btn-primary btn-block mt-5 mb-5' %>
     <% end %>
   </div>
 </div>

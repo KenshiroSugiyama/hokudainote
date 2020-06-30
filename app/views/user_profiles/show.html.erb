@@ -1,9 +1,9 @@
-<div class="text-center">
+<div class="text-center pt-4">
   <h2>プロフィール</h2>
 </div>
-<div class="row">
+<div class="row pl-5 pr-5 pt-3">
   <div class="col-sm-6 offset-sm-3 bg-light">
-    <div class="mb-1">
+    <div class="mb-1 pt-3 ">
     <label>ニックネーム</label>:
         <%= current_user.user_profile.name%>
     </div>
@@ -30,6 +30,6 @@
 
   </div>
 </div>
-<div class="text-center">
+<div class="text-center pt-4 pb-4">
   <%= link_to '編集', edit_user_profile_path%>
 </div>
