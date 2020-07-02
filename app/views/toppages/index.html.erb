@@ -1,18 +1,37 @@
 <h1 class="text-center p-5">hokudainote</h1>
 
 <%# <a href="https://lin.ee/0R5Ofx2"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a> %>
-<div class="text-center pl-4 pr-4 mb-5" >
+
+<% unless user_signed_in? %>
+    <div class="text-center pl-4 pr-4 mb-5" >
     hokudainoteとは北大生限定の授業用ノートを個人が販売・購入できるプラットフォームです。<br>
     ノートは1枚ずつ写真をとってアップロードしてください。<br>
     決済手数料は10％となります。<br><br>
     みなさんがよりよい学生生活を送れるよう、このサービスが使われることを願います。
-</div>
-<div class="text-center pl-4 pr-4 mb-3">
-    <%= link_to '新規登録',new_user_registration_path,class: "btn btn-info"%>
-</div>
-<div class="text-center pl-4 pr-4 mb-5">
-    <%= link_to 'ログイン',new_user_session_path,class: "btn btn-info"%>
-</div>
+    </div>
+    <div class="text-center pl-4 pr-4 mb-3">
+        <%= link_to '新規登録',new_user_registration_path,class: "btn btn-info"%>
+    </div>
+    <div class="text-center pl-4 pr-4 mb-5">
+        <%= link_to 'ログイン',new_user_session_path,class: "btn btn-info"%>
+    </div>
+<% else %>        
+    <div class="text-center">
+        <div class="p-0 m-3 mt-3">
+            <%= link_to 'ノートを買う', '/notes#index', class: 'btn btn-info a'  %>
+        </div>
+        <div class="p-0 m-3">
+            <%= link_to 'ノートを売る', new_lecture_path, class: 'btn btn-info a'  %>
+        </div>
+        <div class="p-0 m-3">
+            <%= link_to ' マイページ ', my_pages_home_path, class: 'btn btn-info'  %> 
+        </div>
+        <div class="p-0 mb-4 m-3">
+            <%= link_to ' ログアウト ', destroy_user_session_path,method: :delete , class: 'btn btn-danger'  %>
+        </div>
+        
+    </div>
+<% end %>
 <%# <div class="text-center">
 <%= image_tag 'school.png',:size =>'250x250'%>
 <%# </div> %> 

@@ -31,7 +31,24 @@ body {
       filter: blur(1px);
       z-index: -1;
     }
-  
+    div a.btn.btn-info.a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 46px;
+        padding-left: 46px;
+      }
+    div a.btn.btn-info {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 54px;
+      padding-left: 54px;
+    }
+    div a.btn.btn-danger {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 54px;
+        padding-left: 54px;
+    }
   }
   
  

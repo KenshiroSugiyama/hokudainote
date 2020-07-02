@@ -1,8 +1,8 @@
 <footer class="footer bg-light ">
   <div class="container">
     <div class="row text-center pt-4">
-        <p class = "col-sm-4">運営者: 北海道大学工学部３年　杉山堅志郎</p>
-        <div class="col-sm-2">
+        <%# <div class = "offset-sm-4 col-sm-4">運営者: 北海道大学工学部３年　杉山堅志郎</div> <br> %>
+        <div class="offset-sm-2 col-sm-2">
         <i class="fas fa-lock"></i>
         <%= link_to "利用規約",toppages_rule_path,:style=>"color:black;" %>
         </div>
@@ -15,7 +15,7 @@
         <i class="far fa-envelope"></i>
         <%= link_to "お問い合わせ",toppages_form_path,:style=>"color:black;" %>
         </div>
-        <div class="col-sm-2 mb-3">
+        <div class="col-sm-3 mb-3">
         <i class="fas fa-id-card"></i>
         <%= link_to "プライバシーポリシー",toppages_privacy_path,:style=>"color:black;" %>
         </div>
