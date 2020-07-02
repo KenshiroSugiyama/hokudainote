@@ -11,7 +11,7 @@
 
 
 
-div.container1 {
+body {
     margin: 0 ;
     background-image: url('note.jpg') ;
     background-position: center center;
@@ -20,26 +20,18 @@ div.container1 {
     background-size: cover;
     background-color: #464646;
     z-index: 0;
-  }
-  // div::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: -5px;
-  //   bottom: -5px;
-  //   left: -5px;
-  //   right: -5px;
-  //   background: inherit;
-  //   filter: blur(2px);
-  //   z-index: -1;
-  // }
-  .text{
-    margin-left: 30px ;
-    margin-right: 30px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+      background: inherit;
+      filter: blur(1px);
+      z-index: -1;
+    }
+  
   }
   
-  // nav.navbar.navbar-expand-sm.navbar-dark.bg-dark {
-  //   // padding-bottom: 0 ;
-  //   // border-bottom: 0 ;
-  //   margin-bottom: 0 ;
-  // }
-
+ 

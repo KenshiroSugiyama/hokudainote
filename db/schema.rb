@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_050103) do
+ActiveRecord::Schema.define(version: 2020_07_02_175117) do
 
   create_table "bank_accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(version: 2020_05_18_050103) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.index ["note_id"], name: "index_images_on_note_id"
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.string "name"
+    t.string "message"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lectures", force: :cascade do |t|

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'toppages/rule'
   get 'toppages/form'
   get 'toppages/profile'
+  get 'toppages/privacy'
+  post 'toppages/create'
   root to: 'toppages#index'
   
   get 'my_pages/home', to: 'my_pages#home'

@@ -1,8 +1,31 @@
 <h3 class="text-center pt-5 pb-3">お問い合わせ</h3>
-<div class="pl-5 pr-5">
-お問い合わせは以下よりお願いいたします。<br><br>
-<i class="fa fa-envelope"></i> kenkahokan@eis.hokudai.ac.jp<br>
-<i class="fab fa-twitter"></i> <a href="https://twitter.com/hokudainote">hokudainote</a>
+<div class="text-center pl-5 pr-5 mb-3">
+お問い合わせは<br><br>
+    <i class="fa fa-envelope"></i> ken4600223@gmail.com<br>
+    <i class="fab fa-twitter"></i> <a href="https://twitter.com/hokudainote">hokudainote</a><br><br>
+もしくは以下のフォームよりお願いいたします。
 </div>
 
-<br><br><br><br><br><br>
+<div class="form-group pl-5 pr-5">
+    <%= form_with(model:  @inquiry, url: toppages_create_path,method: :post ,local: true) do |f| %>
+    <div class="field text-center p-3 offset-sm-4 col-sm-4">
+        <%= f.label :name, '名前（必須）' %><br/>
+        <%= f.text_field :name,class: "form-control" %>
+    </div>
+
+    <div class="field text-center p-3 offset-sm-4 col-sm-4">
+        <%= f.label :email, 'メールアドレス（必須）' %><br />
+        <%= f.email_field :email,class: "form-control" %>
+    </div>
+
+    <div class="field text-center p-3 offset-sm-4 col-sm-4">
+        <%= f.label :message , 'メッセージ本文'%><br />
+        <%= f.text_field :message,class: "form-control" %>
+    </div>
+    <div class="field text-center p-3 offset-sm-5 col-sm-2">
+    <%= f.submit '送信', class: 'btn btn-info btn-block mt-5 mb-5' %>
+    </div>
+    <% end %>
+</div>
+
+

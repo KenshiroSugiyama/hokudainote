@@ -1,7 +1,7 @@
 <div class="text-center pt-5">
   <h3>授業情報入力</h3>
 </div>
-<div class="row ml-4 mr-4">
+<div class="row ml-4 mr-4 mb-5">
 <div class="offset-sm-4 col-sm-4 text-center">
     <%= form_with(model: @note, url: lectures_path,method: :post ,local: true) do |f| %>
     <%= render 'layouts/error_messages', model: @note %>
@@ -43,5 +43,6 @@
         </div>
         <%= f.submit '登録して次へ', class: 'btn btn-info btn-block mt-5 mb-5' %>    
     <% end %>
+
 </div>
 </div>
