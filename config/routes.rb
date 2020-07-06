@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'toppages/form'
   get 'toppages/profile'
   get 'toppages/privacy'
+  get 'toppages/commerce'
   post 'toppages/create'
   root to: 'toppages#index'
   

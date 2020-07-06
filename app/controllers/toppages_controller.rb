@@ -31,4 +31,7 @@ class ToppagesController < ApplicationController
 
   def privacy
   end
+
+  def commerce
+  end
 end
