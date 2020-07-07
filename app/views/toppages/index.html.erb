@@ -3,19 +3,28 @@
 <%# <a href="https://lin.ee/0R5Ofx2"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a> %>
 
 <% unless user_signed_in? %>
-    <div class="text-center pl-4 pr-4 mb-5" >
+<div class="p-4">
+    <div class="text-center mb-5" >
     hokudainoteとは北大生限定の授業用ノートを個人が販売・購入できるプラットフォームです。<br>
     ノートは1枚ずつ写真をとってアップロードしてください。<br>
     決済手数料は10％となります。<br><br>
     みなさんがよりよい学生生活を送れるよう、このサービスが使われることを願います。
     </div>
+    
+    <div class="text-center mb-5">
+        <%= image_tag 'hokudainote.png',alt: '１度出品したら一生の資産に',class: 'img-fluid'%>
+        <br><br>例　大学２年時に出品した場合
+    </div>
+    <%# <div class="text-center pl-4 pr-4 mb-3">
+        <%= link_to 'ノートを見てみる',notes_path,class: "btn btn-info "%>
+    <%# </div> %>
     <div class="text-center pl-4 pr-4 mb-3">
         <%= link_to '新規登録',new_user_registration_path,class: "btn btn-info "%>
     </div>
     <div class="text-center pl-4 pr-4 mb-3">
         <%= link_to 'ログイン',new_user_session_path,class: "btn btn-info "%>
     </div>
-    <div class="mb-5">
+    
     </div>
 <% else %>        
     <div class="text-center">
@@ -34,10 +43,7 @@
         
     </div>
 <% end %>
-<%# <div class="text-center">
-<%= image_tag 'school.png',:size =>'250x250'%>
-<%# </div> %> 
-<br><br>
+
 
 
 
