@@ -1,101 +1,68 @@
-<div class = "credit-update">
-    <h3 class = "credit-update__label">
-    クレジットカード情報入力
+<div class = "m-3">
+    <h3 class = "text-center mt-5 mb-5">
+    クレジットカード登録
     </h3>
-    <div class = "card-form">
+    <div class = "form-group text-center">
         <div class = "card-form__box">
             <%= form_with(model: @card,url: {controller: 'cards',action: 'create'}, method: :post, id: 'charge-form', name: "inputForm",local: true) do |f|%>
             <div class = "card-form__box__number">
-                <label {class:'box-group--label', for: 'card_number'}> カード番号</label>
-                <span class = "bg-warning">必須</span>
-                <div>
-                <%= f.text_field :number, class: 'card-number--input', id: 'card_number', maxlength: "16", placeholder: "半角数字のみ"%>
-                </div>
+                <label > カード番号</label>
+                <span class = "bg-info text-white">必須</span>
+                <%= f.text_field :number, class: 'form-control offset-3 col-6', maxlength: "16", placeholder: "半角数字のみ"%> 
             </div>
-            
-            <div class = "container">
-                <div class = "row">
-                    <div class = "col-sm-1">
-                    <%= image_tag "VISA.eps", width:"49", height:"20"%>
-                    </div>
-                    <div class = "col-sm-1">
-                    <%= image_tag "master-card.svg", width:"34", height:"20"%>
-                    </div>
-                    <div class = "col-sm-1">
-                    <%= image_tag "saison-card.svg", width:"30", height:"20"%>
-                    </div>
-                    <div class = "col-sm-1">
-                    <%= image_tag "jcb.svg", width:"32", height:"20"%>
-                    </div>
-                    <div class = "col-sm-1">
-                    <%= image_tag "american_express.svg", width:"21", height:"20"%>
-                    </div>
-                    <div class = "col-sm-1">
-                    <%= image_tag "dinersclub.svg", width:"32", height:"20"%>
-                    </div> 
-                </div>
-            </div>
+         <div class="mt-4">   
             <label class = "box-group--label">有効期限</label> 
-            <span class = "bg-warning">必須</span>
-            <div class = "container">
-                <div class= "row">
-                    <div class = "col-sm-2">
-                        <select id="exp_month" name="exp_month" type="text">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <span {class: "month"}>月</span> 
-                    </div>       
-                    <div class = "col-sm-2">
-                        <select id="exp_year" name="exp_year" type="text">
-                            <option value="2020">20</option>
-                            <option value="2021">21</option>
-                            <option value="2022">22</option>
-                            <option value="2023">23</option>
-                            <option value="2024">24</option>
-                            <option value="2025">25</option>
-                            <option value="2026">26</option>
-                            <option value="2027">27</option>
-                            <option value="2028">28</option>
-                            <option value="2029">29</option>
-                            <option value="2030">30</option>
-                        </select>
-                        <%# <i class = "card-form-expire-icon">     %>
-                        <%# <%= image_tag "arrow-bottom.png", size: "16x10",class:"arrow-bottom-icon6"%> 
-                        <%# </i> %>
-                        <span {class: "year" }> 年</span>
-                    </div>
-                </div>     
+            <span class = "bg-info text-white">必須</span>
+            <div class = "">
+                <select id="exp_month" name="exp_month" type="text">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <span {class: "month"}>月</span> 
+            
+                <select id="exp_year" name="exp_year" type="text">
+                    <option value="2020">20</option>
+                    <option value="2021">21</option>
+                    <option value="2022">22</option>
+                    <option value="2023">23</option>
+                    <option value="2024">24</option>
+                    <option value="2025">25</option>
+                    <option value="2026">26</option>
+                    <option value="2027">27</option>
+                    <option value="2028">28</option>
+                    <option value="2029">29</option>
+                    <option value="2030">30</option>
+                </select>
+                <span {class: "year" }> 年</span>
             </div>
+        </div>
+        
             
                 
 
-            <div class = "card-form__box__security-code">
-                <label class = "box-group--label{for: "cvc"}">セキュリティーコード</label> 
-                <span class = "bg-warning">
+            <div class = "mt-4">
+                <label >セキュリティーコード</label> 
+                <span class = "bg-info text-white">
                     必須
                 </span>
                 <div>
-                <%= f.text_field :cvc,size: "30", class: 'payment__security-code', id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"%>
+                <%= f.text_field :cvc,size: "60", class: 'form-control offset-3 col-6', maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"%>
                 </div>
-                <div class = "question-form">
-                    <%# <span class = "question-form__mark">?</span> %>
-                    <span class = "question-form__text ">カード裏面の番号とは？</span>
-                </div>      
+                   
             </div>
                         
-            <div id="card_token">
-            <%= f.submit "追加する", class: "btn btn-primary", id: "token_submit"%>
+            <div class="mt-5 mb-5">
+            <%= f.submit "登録", class: "btn btn-info"%>
             </div>
             <% end %>
         </div>

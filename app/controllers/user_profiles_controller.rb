@@ -36,13 +36,13 @@ class UserProfilesController < ApplicationController
     end
 
     def update
-        @profile = UserProfile.find(current_user.id)
+        @profile = UserProfile.find_by(user_id: current_user.id)
         @profile.name = params[:user_profile][:name]
         @profile.school_year = params[:user_profile][:school_year]
         @profile.department_id = params[:lectures_path][:department_id]
         if @profile.update(profile_params)
             flash[:success] = 'プロフィールを更新しました'
-            redirect_to user_profile_path(id: current_user.id)
+            redirect_to user_profile_path(id: @profile.id)
         else
             flash.now[:danger] = 'プロフィールを更新できません'
             render :edit
