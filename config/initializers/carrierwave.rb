@@ -23,7 +23,7 @@ CarrierWave.configure do |config|
       when 'production'
         config.fog_directory = 'hokudainote-images'
         config.asset_host = 'https://hokudainote-images.s3-ap-northeast-1.amazonaws.com'
-  
+      end
     end
   end
   
