@@ -1,20 +1,28 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  storage :file
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
 
+  def store_dir
+    "hokudainote-image/#{model.id}"
+  end
 
-
-  process resize_to_limit: [400, 300]
+  process resize_to_fit: [400, 300]
 
   #JPGで保存
     #process :convert => 'jpg'
   
   
   # jpg,jpeg,gif,pngのみ
-    #def extension_white_list
-      #%w(pdf)
-    #end
+    def extension_white_list
+      %w(jpg jpeg)
+    end
   
   #ファイル名を変更し拡張子を同じにする
     #def filename
