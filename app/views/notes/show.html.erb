@@ -48,7 +48,7 @@
     <% if @note.images.present? %>
         <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
             <% @image.each do |i|%>
-                <div class="mb-3"><img src="<%= i.image.url %>"></div>                      
+                <div class="mb-3"><img src="<%= i.image.url %>" class="img-fluid"></div>                      
             <% end %>                
         <% else %>
             １枚目のみ表示しています<br><br>
