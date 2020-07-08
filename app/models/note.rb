@@ -1,10 +1,10 @@
 class Note < ApplicationRecord
     belongs_to :user
     belongs_to :lecture
-    has_many :images
+    has_many :images,dependent: :destroy
     belongs_to :department
-    has_many :my_notes
-    has_many :buyers,through: :my_notes
+    has_many :my_notes,dependent: :destroy
+    has_many :buyers,through: :my_notes,dependent: :destroy
     belongs_to :exhibitor, class_name: 'User', foreign_key: :exhibitor_id
     
     validates :price ,presence: true 

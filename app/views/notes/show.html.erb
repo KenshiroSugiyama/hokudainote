@@ -1,45 +1,49 @@
-<div class="text-center pt-5">
+<div class="text-center pt-5 pb-4">
 <h2><%= @lecture.name %> </h2>
 </div>
 
-<div class="text-center pt-4">
-        <h5 class="">
-            説明：<%= @note.description %> 
-        </h5>
-        <h5 class="">
-            値段：<%= @note.price%>円 
-        </h5>
-        <h5 class="">
-            成績：<%= @note.grade %> 
-        </h5>
-        <h5 class="">
-            年度：<%= @note.year %>年度 
-        </h5>
-        <h5 class="">
-        <% if UserProfile.find_by(user_id: @note.exhibitor_id).present? && UserProfile.find_by(user_id: @note.exhibitor_id).name.present? %>
-            出品者：<%= @exhibitor.name %>
+<table class="table p-3 offset-3 col-6">
+    <tr class="">
+        <th>説明</th><th><%= @note.description %></th> 
+    </tr>
+    <tr class="">
+        <th>値段</th> <th><%= @note.price%>円 </th>
+    </tr>
+    <tr class="">
+        <th>成績</th> <th><%= @note.grade %> </th>
+    </tr>
+    <tr class="">
+        <th>年度</th><th><%= @note.year %>年度</th>
+    </tr>
+    <tr class="">
+        <th>出品者</th>
+        <th>
+            <% if UserProfile.find_by(user_id: @note.exhibitor_id).present? && UserProfile.find_by(user_id: @note.exhibitor_id).name.present? %>
+                <%= @exhibitor.name %>
+            <% else %>
+                 不明
+            <% end %>
+        </th>
+    </tr>
+</table>
+<div class="p-4">
+    <% unless current_user.id == @note.exhibitor_id %>
+        <% unless @note.buyed?(current_user) %>
+            <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
+                <%= hidden_field_tag :buyer_id, current_user.id %>
+                <%= hidden_field_tag :note_id, @note.id %>
+                <%= f.submit '購入', class: 'mt-4 offset-4 col-4 btn btn-info btn-block' %>
+            <% end %>
         <% else %>
-            出品者: 不明
+            <div class = "text-center pt-3"> 
+            購入済み
+            </div>
         <% end %>
-        </h5>
-        <div>
-            <% unless current_user.id == @note.exhibitor_id %>
-                <% unless @note.buyed?(current_user) %>
-                    <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
-                        <%= hidden_field_tag :buyer_id, current_user.id %>
-                        <%= hidden_field_tag :note_id, @note.id %>
-                        <%= f.submit '購入', class: 'offset-sm-5 col-sm-2 btn btn-primary btn-block' %>
-                    <% end %>
-                <% else %>
-                    <div class = "text-center pt-3"> 
-                    購入済み
-                    </div>
-                <% end %>
-            <% end %>    
-        </div>
+    <% end %>    
 </div>
+
 <br><br>
-<div class = "row">
+<div class = "row p-3">
     <div class = "col-sm-10 offset-sm-1 text-center mb-5">
         <div class= "a">
             <% if @note.images.present? %>
@@ -48,6 +52,7 @@
                         <div class="mb-3"><img src="<%= i.image.url %>"　width="400" height="300"></div>                      
                     <% end %>                
                 <% else %>
+                    １枚目のみ表示しています<br><br>
                     <img src="<%= @i[0].image.url %>">
                 <% end %>
             <% end %>
