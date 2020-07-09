@@ -1,16 +1,16 @@
 class User < ApplicationRecord
   has_many :notes,dependent: :destroy
-  has_one :user_profile,dependent: :delete
-  has_many :my_notes,dependent: :destroy
-  has_many :notes,through: :my_notes,dependent: :destroy
+  has_one :user_profile,dependent: :delete,foreign_key: :user_id
+  has_many :my_notes, foreign_key: 'buyer_id',dependent: :destroy
+  has_many :notes,through: :my_notes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: %i[google_oauth2]
   #validate :check_email
-  has_many :cards,dependent: :destroy
-  has_one :bank_account,dependent: :delete
+  has_many :cards,dependent: :destroy,foreign_key: :user_id
+  has_one :bank_account,dependent: :delete,foreign_key: :user_id
  # validates :accepted, presence: {message: 'を入力してください'}
   
 

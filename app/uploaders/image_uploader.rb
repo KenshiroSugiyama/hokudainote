@@ -1,14 +1,12 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
-    storage :file
-  else
+  if Rails.env.production?
     storage :fog
+  else
+    storage :file
   end
-
+  
   def store_dir
     "hokudainote-image/#{model.id}"
   end
