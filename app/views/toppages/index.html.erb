@@ -11,21 +11,24 @@
     <%= image_tag 'e.png',alt: 'hokudainoteとは',class: 'img-fluid' %>
     </div>
     <br>
-    <div class="text-center mb-5">
+    <div class="text-center mb-3">
         <%= image_tag 'hokudainote.png',alt: '１度出品したら一生の資産に',class: 'img-fluid'%>
         <br><br>例　大学２年時に出品した場合
     </div>
     <%# <div class="text-center pl-4 pr-4 mb-3">
         <%= link_to 'ノートを見てみる',notes_path,class: "btn btn-info "%>
     <%# </div> %>
+    <div class="text-center py-4">
+        <div class="pb-3">新着ノート</div>
+        <%= render 'notes/notes', notes: @notes %>
+    </div>
     <div class="text-center pl-4 pr-4 mb-3">
         <%= link_to '新規登録',new_user_registration_path,class: "btn btn-info "%>
     </div>
     <div class="text-center pl-4 pr-4 mb-3">
         <%= link_to 'ログイン',new_user_session_path,class: "btn btn-info "%>
     </div>
-    
-    </div>
+</div>
 <% else %>        
     <div class="text-center">
         <div class="p-0 m-3 mt-3">

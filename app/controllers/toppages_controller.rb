@@ -1,5 +1,6 @@
 class ToppagesController < ApplicationController
   def index
+    @notes = Note.last(2)
   end
 
   def rule

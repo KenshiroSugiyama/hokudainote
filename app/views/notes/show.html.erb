@@ -27,29 +27,41 @@
     </tr>
 </table>
 <div class="p-4">
-    <% unless current_user.id == @note.exhibitor_id %>
-        <% unless @note.buyed?(current_user) %>
-            <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
-                <%= hidden_field_tag :buyer_id, current_user.id %>
-                <%= hidden_field_tag :note_id, @note.id %>
-                <%= f.submit '購入', class: 'mt-4 offset-4 col-4 btn btn-info btn-block' %>
+    <% if user_signed_in?%>
+        <% unless current_user.id == @note.exhibitor_id %>
+            <% unless @note.buyed?(current_user) %>
+                <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
+                    <%= hidden_field_tag :buyer_id, current_user.id %>
+                    <%= hidden_field_tag :note_id, @note.id %>
+                    <%= f.submit '購入', class: 'mt-4 offset-4 col-4 btn btn-info btn-block' %>
+                <% end %>
+            <% else %>
+                <div class = "text-center pt-3"> 
+                購入済み
+                </div>
             <% end %>
-        <% else %>
-            <div class = "text-center pt-3"> 
-            購入済み
-            </div>
+        <% end %>   
+    <% else %>
+        <%= form_with(model: @note.my_notes.build(note_id: @note.id), local: true) do |f| %>
+            <%= hidden_field_tag :note_id, @note.id %>
+            <%= f.submit '購入', class: 'mt-4 offset-4 col-4 btn btn-info btn-block' %>
         <% end %>
-    <% end %>    
+    <% end %> 
 </div>
 
 <br><br>
 
 <div class = "p-3 text-center mb-5">
     <% if @note.images.present? %>
-        <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
-            <% @image.each do |i|%>
-                <div class="mb-3"><img src="<%= i.image.url %>" class="img-fluid"></div>                      
-            <% end %>                
+        <% if user_signed_in? %>
+            <% if @note.buyed?(current_user)||current_user.id == @note.exhibitor_id %>               
+                <% @image.each do |i|%>
+                    <div class="mb-3"><img src="<%= i.image.url %>" class="img-fluid"></div>                      
+                <% end %>                
+            <% else %>
+                １枚目のみ表示しています<br><br>
+                <img src="<%= @i[0].image.url %>" class="img-fluid">
+            <% end %>
         <% else %>
             １枚目のみ表示しています<br><br>
             <img src="<%= @i[0].image.url %>" class="img-fluid">
