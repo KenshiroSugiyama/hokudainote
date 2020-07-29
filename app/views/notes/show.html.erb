@@ -2,9 +2,9 @@
 <h2><%= @lecture.name %> </h2>
 </div>
 
-<table class="table offset-2 col-8">
-    <tr class="">
-        <th>説明</th><th><%= @note.description %></th> 
+<table class="table offset-1 col-10 offset-sm-3 col-sm-6 text-center">
+    <tr>
+        <th style="width:75px">説明</th><th><%= @note.description %></th> 
     </tr>
     <tr class="">
         <th>値段</th> <th><%= @note.price%>円 </th>
@@ -13,7 +13,7 @@
         <th>成績</th> <th><%= @note.grade %> </th>
     </tr>
     <tr class="">
-        <th>年度</th><th><%= @note.year %></th>
+        <th>年度</th><th><%= @note.year %>年度</th>
     </tr>
     <tr class="">
         <th>出品者</th>
@@ -26,7 +26,7 @@
         </th>
     </tr>
 </table>
-<div class="p-4">
+<div class="p-3">
     <% if user_signed_in?%>
         <% unless current_user.id == @note.exhibitor_id %>
             <% unless @note.buyed?(current_user) %>
@@ -49,7 +49,7 @@
     <% end %> 
 </div>
 
-<br><br>
+<br>
 
 <div class = "p-3 text-center mb-5">
     <% if @note.images.present? %>
