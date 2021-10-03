@@ -1,24 +1,27 @@
-# README
+# hokudainote
+Overview  
+This app is a knowledge sharing platform for university students.  
+You can trade knowledge gained in class in the form of notes.
+<br>
+## Description
+This app was written in Ruby.<br>I chose Ruby on Rails as framework.<br>
+The main functions are user registration, note upload, payment and class selection.<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
+(Note seller)  
+1. Account registration  
+2. Click on the "Sell Note" button  
+3. Select the relevant class  
+4. Fill in information about your knowledge  
+5. Select photos to upload  
+6. Upload  
+<br>
+(Note buyers)  
+1. Account registration  
+2. Click on the "Buy Note" button  
+3. Select the note you want to buy from the list of notes  
+4. Click on the "Buy" button
+5. Choose your payment method  
+6. Buy  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  
