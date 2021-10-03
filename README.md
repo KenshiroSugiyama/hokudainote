@@ -17,11 +17,11 @@ The main functions are user registration, note upload, payment and class selecti
 6. Upload  
 <br>
 (Note buyers)  
-1. Account registration  
-2. Click on the "Buy Note" button  
-3. Select the note you want to buy from the list of notes  
-4. Click on the "Buy" button
-5. Choose your payment method  
-6. Buy  
+1. Account registration<br>
+2. Click on the "Buy Note" button <br>  
+3. Select the note you want to buy from the list of notes <br>   
+4. Click on the "Buy" button<br>
+5. Choose your payment method <br>
+6. Buy<br>
 
   
