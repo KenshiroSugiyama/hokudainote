@@ -29,8 +29,8 @@ Used the payment API (Pay.jp) and Google API (Google OAuth)<br>
 <br><br><br>
 
 
-![hokudainote herokuapp com_(iPhone 6_7_8) (1)](https://user-images.githubusercontent.com/55575591/138292430-b9868a7b-185f-4571-aefd-64292a378035.png)
+<!-- ![hokudainote herokuapp com_(iPhone 6_7_8) (1)](https://user-images.githubusercontent.com/55575591/138292430-b9868a7b-185f-4571-aefd-64292a378035.png) -->
 
-![hokudainote herokuapp com_(iPhone 6_7_8) (2)](https://user-images.githubusercontent.com/55575591/138292455-04592ab7-7019-46d7-b2ba-7f7a6284de56.png)
+<!-- ![hokudainote herokuapp com_(iPhone 6_7_8) (2)](https://user-images.githubusercontent.com/55575591/138292455-04592ab7-7019-46d7-b2ba-7f7a6284de56.png) -->
 
 
