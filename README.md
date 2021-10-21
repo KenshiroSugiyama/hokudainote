@@ -20,13 +20,16 @@ Used the payment API (Pay.jp) and Google API (Google OAuth)<br>
 6. Upload  
 <br>
 (Note buyer)  <br><br>  
- 1. Account registration  <br>
- 2. Click on the "Buy Note" button  <br>
- 3. Select the note you want to buy from the list of notes  <br>
- 4. Click on the "Buy" button  <br>
- 5. Choose your payment method<br>
- 6. Buy   
+  1. Account registration  <br>
+  2. Click on the "Buy Note" button  <br>
+  3. Select the note you want to buy from the list of notes  <br>
+  4. Click on the "Buy" button  <br>
+  5. Choose your payment method<br>
+  6. Buy   
 <br>
 
 
-  
+  |![markdown_matome.PNG](https://gyazo.com/43907a6df6711cf8d51cbb096ae2f43f)
+|:-:|
+  |![markdown_matome.PNG](https://gyazo.com/d58e9cbad4696cf96d3502f39203ea51)
+|:-:|
