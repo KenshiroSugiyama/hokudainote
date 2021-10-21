@@ -29,7 +29,9 @@ Used the payment API (Pay.jp) and Google API (Google OAuth)<br>
 <br>
 
 
-  |![markdown_matome.PNG](https://gyazo.com/43907a6df6711cf8d51cbb096ae2f43f)
+|![markdown_matome.PNG](https://gyazo.com/43907a6df6711cf8d51cbb096ae2f43f)
 |:-:|
-  |![markdown_matome.PNG](https://gyazo.com/d58e9cbad4696cf96d3502f39203ea51)
+
+
+|![markdown_matome.PNG](https://gyazo.com/d58e9cbad4696cf96d3502f39203ea51)
 |:-:|
