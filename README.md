@@ -11,7 +11,7 @@ The main functions are user registration, note upload, payment and class selecti
 Used the payment API (Pay.jp) and Google API (Google OAuth)<br>
 
 ## Usage
-(Note seller)  <br><br>
+(Note seller)  <br>
 1. Account registration<br>  
 2. Click on the "Sell Note" button <br> 
 3. Select the relevant class<br>  
@@ -19,7 +19,7 @@ Used the payment API (Pay.jp) and Google API (Google OAuth)<br>
 5. Select photos to upload  <br>
 6. Upload  <br>
 
-(Note buyer)  <br><br>
+(Note buyer)  <br>
 1. Account registration  <br>
 2. Click on the "Buy Note" button  <br>
 3. Select the note you want to buy from the list of notes  <br>
