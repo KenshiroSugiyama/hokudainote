@@ -1,7 +1,7 @@
 # hokudainote
 **Overview**  
-This app is a **knowledge sharing platform** for university students.  
-You can trade knowledge gained in class in the form of notes.
+This app is a **knowledge sharing platform** for university students. <br> 
+You can trade knowledge gained in class in the form of notes.<br>
 This app connects students who are doing club activities with students who are focusing on studying.<br>
 Students who are studying hard can sell their own notebooks, and students who are working hard can buy notebooks and save time studying.
 <br>
