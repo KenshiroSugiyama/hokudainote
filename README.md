@@ -1,5 +1,5 @@
 # hokudainote
-<Overview>  
+**Overview**  
 This app is a **knowledge sharing platform** for university students.  
 You can trade knowledge gained in class in the form of notes.
 <br>
